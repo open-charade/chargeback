@@ -1,0 +1,10 @@
+{
+  "generator-python-lib": {
+    "projectName": "chargeback",
+    "fullName": "Alberto Gutierrez",
+    "email": "agutierr@redhat.com",
+    "githubName": "aljesusg",
+    "ciProvider": "Travis CI",
+    "version": "4.0.40"
+  }
+}
