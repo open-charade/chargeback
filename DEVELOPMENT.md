@@ -1,7 +1,7 @@
-## Development Guide
+# Development Guide
 
 
-### Create a conda environment.
+## Create a conda environment.
 Check  [Install Conda Guide](https://conda.io/docs/user-guide/install)  for Python3.6 .
 
 
@@ -30,3 +30,7 @@ To deactivate
 ````bash
 conda deactivate
 ````
+
+## Make a release
+
+You need to tag the commit to deploy a new release in pypy.

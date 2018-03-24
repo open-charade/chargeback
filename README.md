@@ -1,7 +1,7 @@
 # chargeback
 
 [![license](https://img.shields.io/github/license/open-charade/chargeback.svg)]()
-[![Build Status](https://travis-ci.org/a/open-charade/chargeback.svg?branch=master)](https://travis-ci.org/a/open-charade/chargeback)
+[![Build Status](https://travis-ci.org/open-charade/chargeback.svg?branch=master)](https://travis-ci.org/open-charade/chargeback)
 [![codecov](https://codecov.io/gh/open-charade/chargeback/branch/master/graph/badge.svg)](https://codecov.io/gh/open-charade/chargeback)
 
 About this project...
