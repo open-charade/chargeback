@@ -6,13 +6,8 @@
 
 About this project...
 
-## Installation
+Read or [DOCUMENTATION](https://open-charade.github.io/chargeback/)
 
-Installation instructions...
-
-## Usage
-
-Usage instructions...
 
 ## Development
 
