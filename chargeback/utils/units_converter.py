@@ -98,7 +98,14 @@ BINARY_PREFIX = {
 ALL_PREFIXES =  dict(BINARY_PREFIX, **SI_PREFIX)
 
 def to_unit(value, unit = '', destination_unit = '', prefix_type = 'ALL_PREFIXES'):
-  # It returns the value converted to the new unit
+  """
+  This Funtion take 4 arguments and convert the value <unit> to the <destination_unit> provided
+  :param value:  value of the quantity we wanna change (Example: 5)
+  :param unit:   The unit of the quantity (Example: Kb)
+  :param destination_unit: The unit that we wanna transform or quantity (Example: b)
+  :param prefix_type: The list of units: BINARY, PREFIX. By default is ALL_PREFIXES (Ex: ALL_PREFIXES)
+  :return: Return the value converted from unit to destination unit (Example : 5kb => 5000b)
+  """
   prefix = extract_prefix(unit)
   destination_prefix = extract_prefix(destination_unit)
   prefix_distance = distance(prefix, destination_prefix, prefix_type)
