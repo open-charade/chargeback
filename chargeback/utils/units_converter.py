@@ -104,30 +104,35 @@ def to_unit(value, unit = '', destination_unit = '', prefix_type = 'ALL_PREFIXES
   prefix_distance = distance(prefix, destination_prefix, prefix_type)
   if prefix_distance is None:
       return None
-  return (value * prefix_distance).to_f
+  return (float(value) * float(prefix_distance))
 
 def extract_prefix(unit):
   prefix = None
+
+  if unit is None:
+      return ''
+
   for key in SYMBOLS:
     match = re.search('^(.*).*(' + key + ')\Z', unit)
     prefix = match.groups()[0] if match is not None else None
     if prefix is not None:
       break
+
   if prefix is not None:
     return prefix
-  if unit is not None:
-    return unit
-  else:
-    return ''
+
+  return unit
 
 def distance(prefix, other_prefix = '', prefix_type = 'ALL_PREFIXES'):
   # Returns the distance and whether you need to divide or multiply
   # Check that the list of conversions exists or use the International Sistem SI
-  list = vars()[prefix_type] if prefix_type in vars() else ALL_PREFIXES
+  if type(prefix_type) == dict:
+      list = prefix_type
+  elif type(prefix_type) == str:
+      list = vars()[prefix_type] if prefix_type in vars() else ALL_PREFIXES
+  else:
+    return None
 
-  # Find the prefix name, value pair in the list
-  orig = list[prefix]
-  dest = list[other_prefix]
   # If I can't find the prefixes in the list:
   # If they are the same, return 1
   # If they are different (i.e. "cores" vs "none", return nil)
@@ -135,6 +140,9 @@ def distance(prefix, other_prefix = '', prefix_type = 'ALL_PREFIXES'):
       return 1
   if prefix not in list or other_prefix not in list:
      return None
+
+  # Find the prefix name, value pair in the list
   orig = list[prefix]
   dest = list[other_prefix]
-  return orig['value'].to_r / dest['value']
+
+  return orig['value'] / dest['value']
